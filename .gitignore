@@ -1,6 +1,8 @@
 *.suo
 *.pdb
 *.cache
+*.manifest
+*.vshost.*
 obj/
 debug/
 Debug/
