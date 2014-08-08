@@ -164,10 +164,12 @@ namespace AOTP
 
             string[] Files = new string[lbFiles.Items.Count];
             int i;
+            //read files in reverse order
             for (i = 0; i < Files.Length; i++)
             {
                 Files[i] = lbFiles.Items[i].ToString();
             }
+            Array.Reverse(Files);
 
             //encrypt
             long longest = 0L;
