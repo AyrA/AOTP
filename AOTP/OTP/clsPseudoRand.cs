@@ -10,7 +10,7 @@ namespace AOTP
     {
         private long currPos=0;
         private long len = 0;
-        private Random r;
+        private iRNG r;
 
         /// <summary>
         /// true
@@ -83,42 +83,21 @@ namespace AOTP
         { get; set; }
 
         /// <summary>
-        /// creates new RNG stream
-        /// </summary>
-        /// <param name="init">seed</param>
-        /// <param name="length">length of stream</param>
-        public PseudoRandStream(int init, long length)
-        {
-            r = new Random(init);
-            len = length;
-        }
-
-        /// <summary>
         /// creates new RNG stream with random seed
         /// </summary>
         /// <param name="length">length of stream</param>
-        public PseudoRandStream(long length)
+        public PseudoRandStream(iRNG RandomGen, long length)
         {
-            r = new Random();
+            r = RandomGen;
             len = length;
-        }
-
-        /// <summary>
-        /// creates new RNG stream of maximum length
-        /// </summary>
-        /// <param name="init">seed</param>
-        public PseudoRandStream(int init)
-        {
-            r = new Random(init);
-            len = long.MaxValue;
         }
 
         /// <summary>
         /// creates new RNG stream with random seed and maximum length
         /// </summary>
-        public PseudoRandStream()
+        public PseudoRandStream(iRNG RandomGen)
         {
-            r = new Random();
+            r = RandomGen;
             len = long.MaxValue;
         }
 
@@ -190,8 +169,7 @@ namespace AOTP
                 if (offset + count <= buffer.Length)
                 {
                     //make array not too big for stream
-                    byte[] temp = new byte[count + currPos > len ? len - currPos : count];
-                    r.NextBytes(temp);
+                    byte[] temp = r.NextBytes(count + currPos > len ? (int)(len - currPos) : count);
                     Array.Copy(temp, 0, buffer, offset, temp.Length);
                     currPos += temp.Length;
                     return temp.Length;
@@ -231,7 +209,7 @@ namespace AOTP
             if (currPos < len)
             {
                 ++currPos;
-                return r.Next(256);
+                return r.NextByte();
             }
             else
             {

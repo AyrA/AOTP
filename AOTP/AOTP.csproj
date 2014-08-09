@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OTP\clsCryptoRNG.cs" />
+    <Compile Include="OTP\clsDefaultRNG.cs" />
     <Compile Include="OTP\clsOTP.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -51,6 +53,7 @@
     <Compile Include="OTP\clsRNG.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="OTP\iRNG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">

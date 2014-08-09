@@ -1,14 +1,27 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace AOTP
 {
     /// <summary>
     /// Custom random number generator
     /// </summary>
-    public class RNG
+    public class RNG : iRNG
     {
         private uint z;
         private uint w;
+
+        public static uint RandomSeed
+        {
+            get
+            {
+                var RNG=RandomNumberGenerator.Create();
+                byte[] b = new byte[4];
+                RNG.GetBytes(b);
+                uint rv=BitConverter.ToUInt32(b, 0);
+                return rv == 0 ? 1 : rv;
+            }
+        }
 
         /// <summary>
         /// returns the seed used to initialize the generator
@@ -30,7 +43,7 @@ namespace AOTP
         /// </summary>
         public RNG()
         {
-            Seed = z = w = (uint)(DateTime.Now.Ticks % (uint.MaxValue - 1)) + 1;
+            Seed = z = w = RandomSeed;
         }
 
         /// <summary>
