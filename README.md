@@ -45,7 +45,7 @@ Key detection
 -------------
 
 Somebody dedicated enough to break the encryption could guess the key. This is only possible after the last file has been released.
-The Random number generator in this application is not cryptographically safe. It allows the user to generate a total of 4,294,967,295 possible keys.
+The Random number generator in this application is cryptographically safe but a bit slower than regular generators. The application contains two other generators for testing purposes.
 
 If the last file is released, somebody could try to generate every possible key until he can decrypt the header successfully. This can be very easily prevented by encrypting an additional file.
 just create a text file and name it "DISCARD.txt" or something similar and put some content in it. Release the encrypted text file together with the key.
