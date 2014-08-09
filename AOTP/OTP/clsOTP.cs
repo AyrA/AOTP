@@ -72,21 +72,18 @@ namespace AOTP
         /// <param name="Output">Stream to write the key to. Any writeable stream supported</param>
         public static void generateKey(long Size, uint Seed, Stream Output)
         {
-            RNG R = new RNG(Seed);
-            byte[] buffer;
+            PseudoRandStream PRS = new PseudoRandStream(new CryptoRNG(), Size);
+            byte[] buffer=new byte[BUFFER];
+            int readed = 0;
 
-            for (long i = 0; i < Size; i += BUFFER)
+            xorProgress(0);
+
+            do
             {
-                if (i + BUFFER <= Size)
-                {
-                    buffer = R.NextBytes(BUFFER);
-                }
-                else
-                {
-                    buffer = R.NextBytes((int)(Size - i));
-                }
-                Output.Write(buffer, 0, buffer.Length);
-            }
+                Output.Write(buffer, 0, readed = PRS.Read(buffer, 0, BUFFER));
+                xorProgress(getPerc(PRS.Position, Size));
+            } while (readed > 0);
+            xorProgress(100);
         }
 
         /// <summary>
@@ -208,7 +205,7 @@ namespace AOTP
                 if (InFile.Length + Header.Length < Key.Length)
                 {
                     //expand file and add encrypted crap
-                    using (PseudoRandStream PRS = new PseudoRandStream(Key.Length - InFile.Length - Header.Length))
+                    using (PseudoRandStream PRS = new PseudoRandStream(new CryptoRNG(), Key.Length - InFile.Length - Header.Length))
                     {
                         xor(PRS, Key, Output);
                     }
@@ -280,7 +277,7 @@ namespace AOTP
                 progress /= 10;
                 max /= 10;
             }
-            return (int)(progress * 100 / max);
+            return max == 0 ? 0 : (int)(progress * 100 / max);
         }
     }
 }
