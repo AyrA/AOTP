@@ -50,11 +50,14 @@
             // lbFiles
             // 
             this.lbFiles.AllowDrop = true;
+            this.lbFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFiles.FormattingEnabled = true;
             this.lbFiles.Location = new System.Drawing.Point(12, 49);
             this.lbFiles.Name = "lbFiles";
-            this.lbFiles.Size = new System.Drawing.Size(365, 173);
-            this.lbFiles.TabIndex = 3;
+            this.lbFiles.Size = new System.Drawing.Size(356, 147);
+            this.lbFiles.TabIndex = 2;
             this.lbFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbFiles_DragDrop);
             this.lbFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.lbFiles_DragEnter);
             this.lbFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbFiles_KeyDown);
@@ -74,48 +77,52 @@
             this.label2.Location = new System.Drawing.Point(9, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(404, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 1;
             this.label2.Text = "2. Order the list with the up and down buttons so the first to be released file i" +
                 "s on top.";
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 233);
+            this.label3.Location = new System.Drawing.Point(9, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 13);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 7;
             this.label3.Text = "3. Select the operation";
             // 
             // rbEnc
             // 
+            this.rbEnc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbEnc.AutoSize = true;
             this.rbEnc.Checked = true;
-            this.rbEnc.Location = new System.Drawing.Point(12, 250);
+            this.rbEnc.Location = new System.Drawing.Point(12, 225);
             this.rbEnc.Name = "rbEnc";
             this.rbEnc.Size = new System.Drawing.Size(156, 17);
-            this.rbEnc.TabIndex = 7;
+            this.rbEnc.TabIndex = 8;
             this.rbEnc.TabStop = true;
             this.rbEnc.Text = "Encrypt and generate a key";
             this.rbEnc.UseVisualStyleBackColor = true;
             // 
             // rbDec
             // 
+            this.rbDec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rbDec.AutoSize = true;
-            this.rbDec.Location = new System.Drawing.Point(12, 272);
+            this.rbDec.Location = new System.Drawing.Point(12, 247);
             this.rbDec.Name = "rbDec";
             this.rbDec.Size = new System.Drawing.Size(267, 17);
-            this.rbDec.TabIndex = 8;
+            this.rbDec.TabIndex = 9;
             this.rbDec.Text = "Decrypt and assume the key is the last file in the list";
             this.rbDec.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 300);
+            this.label4.Location = new System.Drawing.Point(9, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(16, 13);
-            this.label4.TabIndex = 9;
+            this.label4.TabIndex = 10;
             this.label4.Text = "4.";
             // 
             // OFD
@@ -126,74 +133,84 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(31, 295);
+            this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGo.Location = new System.Drawing.Point(31, 270);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
-            this.btnGo.TabIndex = 10;
+            this.btnGo.TabIndex = 11;
             this.btnGo.Text = "Go...";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // pbFile
             // 
-            this.pbFile.Location = new System.Drawing.Point(6, 350);
+            this.pbFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbFile.Location = new System.Drawing.Point(6, 325);
             this.pbFile.Name = "pbFile";
-            this.pbFile.Size = new System.Drawing.Size(407, 23);
-            this.pbFile.TabIndex = 12;
+            this.pbFile.Size = new System.Drawing.Size(398, 23);
+            this.pbFile.TabIndex = 13;
             // 
             // pbTotal
             // 
-            this.pbTotal.Location = new System.Drawing.Point(6, 379);
+            this.pbTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbTotal.Location = new System.Drawing.Point(6, 354);
             this.pbTotal.Name = "pbTotal";
-            this.pbTotal.Size = new System.Drawing.Size(407, 23);
-            this.pbTotal.TabIndex = 13;
+            this.pbTotal.Size = new System.Drawing.Size(398, 23);
+            this.pbTotal.TabIndex = 14;
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 330);
+            this.label5.Location = new System.Drawing.Point(9, 305);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 12;
             this.label5.Text = "5. Just watch";
             // 
             // btnRemove
             // 
+            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.Image = global::AOTP.Properties.Resources.del;
-            this.btnRemove.Location = new System.Drawing.Point(383, 85);
+            this.btnRemove.Location = new System.Drawing.Point(374, 85);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(30, 30);
-            this.btnRemove.TabIndex = 5;
+            this.btnRemove.TabIndex = 4;
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = global::AOTP.Properties.Resources.add;
-            this.btnAdd.Location = new System.Drawing.Point(383, 49);
+            this.btnAdd.Location = new System.Drawing.Point(374, 49);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(30, 30);
-            this.btnAdd.TabIndex = 5;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDown
             // 
+            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDown.Image = global::AOTP.Properties.Resources.down;
-            this.btnDown.Location = new System.Drawing.Point(383, 192);
+            this.btnDown.Location = new System.Drawing.Point(374, 167);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(30, 30);
-            this.btnDown.TabIndex = 5;
+            this.btnDown.TabIndex = 6;
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnUp
             // 
+            this.btnUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUp.Image = global::AOTP.Properties.Resources.up;
-            this.btnUp.Location = new System.Drawing.Point(383, 156);
+            this.btnUp.Location = new System.Drawing.Point(374, 131);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(30, 30);
-            this.btnUp.TabIndex = 4;
+            this.btnUp.TabIndex = 5;
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
@@ -205,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 412);
+            this.ClientSize = new System.Drawing.Size(414, 387);
             this.Controls.Add(this.pbTotal);
             this.Controls.Add(this.pbFile);
             this.Controls.Add(this.btnRemove);
@@ -221,8 +238,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbFiles);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(430, 425);
             this.Name = "frmMain";
             this.Text = "AOTP";
             this.ResumeLayout(false);
